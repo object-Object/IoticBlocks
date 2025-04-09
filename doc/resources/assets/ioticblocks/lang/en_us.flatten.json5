@@ -1,0 +1,8 @@
+{
+  hexdoc: {
+    "ioticblocks": {
+      title: "IoticBlocks Book",
+      description: "A port of HexGloop's block read/write patterns for 1.20.1.",
+    },
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ioticblocks",
+  "version": "${modVersion}",
+  "name": "IoticBlocks",
+  "description": "A port of HexGloop's block read/write patterns for 1.20.1.",
+  "authors": [
+    "object-Object"
+  ],
+  "contact": {
+    "homepage": "https://object-object.github.io/IoticBlocks",
+    "sources": "https://github.com/object-Object/IoticBlocks"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "gay.object.ioticblocks.fabric.FabricIoticBlocks"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "gay.object.ioticblocks.fabric.FabricIoticBlocksClient"
+    }]
+  },
+  "mixins": [
+    "ioticblocks-common.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${versions.minecraft}",
+    "fabricloader": ">=${versions.fabric_loader}",
+    "fabric-api": ">=${versions.fabric_api}",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}",
+    "architectury": ">=${versions.architectury}",
+    "hexcasting": ">=${versions.hexcasting}"
+  }
+}
