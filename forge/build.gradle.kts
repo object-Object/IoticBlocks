@@ -62,6 +62,8 @@ dependencies {
     modImplementation(libs.paucal.forge)
     modLocalRuntime(libs.patchouli.forge)
     modLocalRuntime(libs.caelus)
+    modLocalRuntime(libs.inline.forge) { isTransitive = false }
+    modLocalRuntime(libs.clothConfig.forge)
 
     libs.mixinExtras.common.also {
         compileOnly(it)

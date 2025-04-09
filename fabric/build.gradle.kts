@@ -54,6 +54,7 @@ dependencies {
         exclude(group = "net.fabricmc.fabric-api")
     }
     modLocalRuntime(libs.modMenu)
+    modLocalRuntime(libs.inline.fabric) { isTransitive = false }
 
     libs.mixinExtras.fabric.also {
         localRuntime(it)

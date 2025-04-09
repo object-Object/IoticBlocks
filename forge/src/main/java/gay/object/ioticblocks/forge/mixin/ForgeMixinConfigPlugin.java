@@ -15,7 +15,7 @@ public class ForgeMixinConfigPlugin implements IMixinConfigPlugin {
         if (mixinClassName.equals("gay.object.ioticblocks.forge.mixin.MixinDatagenMain")) {
             var shouldApply = System.getProperty("ioticblocks.apply-datagen-mixin", "false").equals("true");
             if (shouldApply) {
-                IoticBlocks.LOGGER.error("Applying scuffed datagen mixin. This should not happen if not running datagen!");
+                IoticBlocks.LOGGER.warn("Applying scuffed datagen mixin. This should not happen if not running datagen!");
             }
             return shouldApply;
         }

@@ -11,12 +11,12 @@ public class MixinDatagenMain {
     @WrapMethod(method = "main", remap = false)
     private static void ioticblocks$systemExitAfterDatagenFinishes(String[] strings, Operation<Void> original) {
         try {
-            original.call((Object[]) strings);
+            original.call((Object) strings);
         } catch (Throwable throwable) {
             IoticBlocks.LOGGER.error("Datagen failed!", throwable);
             System.exit(1);
         }
-        IoticBlocks.LOGGER.info("Terminating datagen.");
+        IoticBlocks.LOGGER.info("Datagen succeeded, terminating.");
         System.exit(0);
     }
 }
