@@ -1,9 +1,7 @@
-package gay.object.ioticblocks.forge
+package gay.`object`.ioticblocks.forge
 
 import dev.architectury.platform.forge.EventBuses
-import gay.object.ioticblocks.IoticBlocks
-import gay.object.ioticblocks.forge.datagen.IoticBlocksModels
-import gay.object.ioticblocks.forge.datagen.IoticBlocksRecipes
+import gay.`object`.ioticblocks.IoticBlocks
 import net.minecraft.data.DataProvider
 import net.minecraft.data.DataProvider.Factory
 import net.minecraft.data.PackOutput
@@ -28,9 +26,6 @@ class IoticBlocksForge {
 
     private fun gatherData(event: GatherDataEvent) {
         event.apply {
-            val efh = existingFileHelper
-            addProvider(includeClient()) { IoticBlocksModels(it, efh) }
-            addProvider(includeServer()) { IoticBlocksRecipes(it) }
         }
     }
 }

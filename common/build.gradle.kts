@@ -16,5 +16,8 @@ dependencies {
 
     modApi(libs.hexcasting.common)
 
-    implementation(libs.mixinExtras)
+    libs.mixinExtras.common.also {
+        implementation(it)
+        annotationProcessor(it)
+    }
 }

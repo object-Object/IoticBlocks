@@ -12,11 +12,15 @@ plugins {
 
 val mavenGroup: String by project
 val modVersion: String by project
+val minecraftVersion: String by project
 val javaVersion = libs.versions.java.get().toInt()
-val minecraftVersion = libs.versions.minecraft.get()
+val publishMavenRelease = System.getenv("PUBLISH_MAVEN_RELEASE") == "true"
 
 group = mavenGroup
 version = "$modVersion+$minecraftVersion"
+if (!publishMavenRelease) {
+    version = "$version-SNAPSHOT"
+}
 
 repositories {
     mavenCentral()

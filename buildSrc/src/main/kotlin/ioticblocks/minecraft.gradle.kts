@@ -2,7 +2,6 @@
 
 package ioticblocks
 
-import kotlin.io.path.div
 import libs
 
 plugins {
@@ -21,6 +20,14 @@ base.archivesName = "${modId}-$platform"
 loom {
     silentMojangMappingsLicense()
     accessWidenerPath = project(":common").file("src/main/resources/ioticblocks.accesswidener")
+
+    @Suppress("UnstableApiUsage")
+    mixin {
+        // the default name includes both archivesName and the subproject, resulting in the platform showing up twice
+        // default: ioticblocks-common-Common-refmap.json
+        // fixed:   ioticblocks-common.refmap.json
+        defaultRefmapName = "${base.archivesName.get()}.refmap.json"
+    }
 }
 
 pkJson5 {
@@ -31,6 +38,7 @@ pkJson5 {
 dependencies {
     minecraft(libs.minecraft)
 
+    @Suppress("UnstableApiUsage")
     mappings(loom.layered {
         officialMojangMappings()
         parchment(libs.parchment)
@@ -50,13 +58,4 @@ sourceSets {
     }
 }
 
-tasks {
-    val artifactsTask = register<Copy>("githubArtifacts") {
-        from(remapJar, remapSourcesJar, get("javadocJar"))
-        into(rootDir.toPath() / "build" / "githubArtifacts")
-    }
 
-    build {
-        dependsOn(artifactsTask)
-    }
-}

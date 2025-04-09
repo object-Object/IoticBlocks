@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "hatchling",
-    "hatch-gradle-version>=0.8.0",
+    "hatch-gradle-version>=0.9.8",
 ]
 build-backend = "hatchling.build"
 
@@ -29,6 +29,7 @@ scheme = "gradle"
 source = "gradle-properties"
 py-path = "doc/src/hexdoc_ioticblocks/__version__.py"
 key = "modVersion"
+gradle-version-regex = { regex='^(.+?)(-.+)?$', repl='\1.{minecraftVersion}\2' }
 
 [tool.hatch.metadata.hooks.gradle-properties]
 dependencies = [

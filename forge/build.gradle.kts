@@ -13,7 +13,7 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfig("ioticblocks-common.mixins.json", "ioticblocks.mixins.json")
+        mixinConfig("ioticblocks-forge.mixins.json")
     }
 
     runs {
@@ -63,8 +63,13 @@ dependencies {
     modLocalRuntime(libs.patchouli.forge)
     modLocalRuntime(libs.caelus)
 
-    libs.mixinExtras.also {
-        implementation(it)
+    libs.mixinExtras.common.also {
+        compileOnly(it)
+        annotationProcessor(it)
+    }
+
+    libs.mixinExtras.forge.also {
+        localRuntime(it)
         include(it)
     }
 }

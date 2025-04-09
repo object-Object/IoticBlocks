@@ -1,6 +1,6 @@
-package gay.object.ioticblocks.fabric
+package gay.`object`.ioticblocks.fabric
 
-import gay.object.ioticblocks.IoticBlocks
+import gay.`object`.ioticblocks.IoticBlocks
 import net.fabricmc.api.ModInitializer
 
 object FabricIoticBlocks : ModInitializer {

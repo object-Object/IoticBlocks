@@ -1,8 +1,11 @@
 // A convention plugin that should be applied to all subprojects corresponding to a specific modloader/platform, such as fabric and forge.
 
+@file:Suppress("UnstableApiUsage")
+
 package ioticblocks
 
 import libs
+import kotlin.io.path.div
 
 plugins {
     id("ioticblocks.minecraft")
@@ -55,6 +58,15 @@ sourceSets {
 }
 
 tasks {
+    val artifactsTask = register<Copy>("jenkinsArtifacts") {
+        from(remapJar)
+        into(rootDir.toPath() / "build" / "jenkinsArtifacts")
+    }
+
+    build {
+        dependsOn(artifactsTask)
+    }
+
     shadowJar {
         exclude("architectury.common.json")
         configurations = listOf(project.configurations["shadowCommon"])
@@ -83,7 +95,7 @@ publishMods {
     val isDryRun = (System.getenv("DRY_RUN") ?: "").isNotBlank()
     dryRun = !isCI || isDryRun
 
-    type = BETA
+    type = STABLE
     changelog = provider { getLatestChangelog() }
     file = tasks.remapJar.flatMap { it.archiveFile }
 
@@ -110,12 +122,12 @@ publishMods {
     }
 }
 
-val SECTION_HEADER_PREFIX = "## "
+val sectionHeaderPrefix = "## "
 
 fun getLatestChangelog() = rootProject.file("CHANGELOG.md").useLines { lines ->
-    lines.dropWhile { !it.startsWith(SECTION_HEADER_PREFIX) }
+    lines.dropWhile { !it.startsWith(sectionHeaderPrefix) }
         .withIndex()
-        .takeWhile { it.index == 0 || !it.value.startsWith(SECTION_HEADER_PREFIX) }
+        .takeWhile { it.index == 0 || !it.value.startsWith(sectionHeaderPrefix) }
         .joinToString("\n") { it.value }
         .trim()
 }

@@ -1,6 +1,6 @@
-package gay.object.ioticblocks.fabric
+package gay.`object`.ioticblocks.fabric
 
-import gay.object.ioticblocks.IoticBlocksClient
+import gay.`object`.ioticblocks.IoticBlocksClient
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType.CLIENT
 import net.fabricmc.api.Environment

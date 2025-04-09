@@ -6,7 +6,7 @@ license = "MIT"
 modId = "ioticblocks"
 version = "${modVersion}"
 displayName = "IoticBlocks"
-logoFile = "icon.png"
+logoFile = "assets/ioticblocks/icon.png"
 authors = "object-Object"
 description = "A port of HexGloop's block read/write patterns for 1.20.1."
 
@@ -34,6 +34,6 @@ side = "BOTH"
 [[dependencies.ioticblocks]]
 modId = "hexcasting"
 mandatory = true
-versionRange = "[${versions.hexcasting},)"
+versionRange = "[${versions.hexcasting_dependency},)"
 ordering = "NONE"
 side = "BOTH"
