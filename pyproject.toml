@@ -31,12 +31,12 @@ py-path = "doc/src/hexdoc_ioticblocks/__version__.py"
 key = "modVersion"
 gradle-version-regex = { regex='^(.+?)(-.+)?$', repl='\1.{minecraftVersion}\2' }
 
-[tool.hatch.metadata.hooks.gradle-properties]
+[tool.hatch.metadata.hooks.version-catalog]
 dependencies = [
-    { package="hexdoc-hexcasting", op="~=", py-version="1.0", key="hexcastingVersion" },
+    { package="hexdoc-hexcasting", op="~=", py-version="1.0", key="hexcasting" },
 ]
 
-[tool.hatch.metadata.hooks.gradle-properties.optional-dependencies]
+[tool.hatch.metadata.hooks.version-catalog.optional-dependencies]
 dev = [
     "ruff~=0.11.2",
 ]
