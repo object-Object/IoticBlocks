@@ -58,4 +58,20 @@ sourceSets {
     }
 }
 
+val localMavenUrl: String? = System.getenv("local_maven_url")
 
+publishing {
+    repositories {
+        localMavenUrl?.let {
+            maven {
+                url = uri(it)
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = base.archivesName.get()
+            from(components["java"])
+        }
+    }
+}

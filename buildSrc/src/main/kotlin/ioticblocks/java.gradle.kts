@@ -55,7 +55,7 @@ repositories {
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(javaVersion)
     withSourcesJar()
-    withJavadocJar()
+//    withJavadocJar()
 }
 
 kotlin {
@@ -78,12 +78,12 @@ tasks {
         enabled = false
     }
 
-    javadoc {
-        options {
-            this as StandardJavadocDocletOptions
-            addStringOption("Xdoclint:none", "-quiet")
-        }
-    }
+//    javadoc {
+//        options {
+//            this as StandardJavadocDocletOptions
+//            addStringOption("Xdoclint:none", "-quiet")
+//        }
+//    }
 
     processResources {
         exclude(".cache")

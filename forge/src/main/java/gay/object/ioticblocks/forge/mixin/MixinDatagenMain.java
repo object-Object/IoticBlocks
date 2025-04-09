@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 // scuffed workaround for https://github.com/architectury/architectury-loom/issues/189
 @Mixin(net.minecraft.data.Main.class)
 public class MixinDatagenMain {
-    @WrapMethod(method = "main")
+    @WrapMethod(method = "main", remap = false)
     private static void ioticblocks$systemExitAfterDatagenFinishes(String[] strings, Operation<Void> original) {
         try {
             original.call((Object[]) strings);
