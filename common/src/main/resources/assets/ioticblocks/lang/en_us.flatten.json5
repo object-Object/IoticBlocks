@@ -1,1 +1,12 @@
-{}
+{
+  hexcasting: {
+    mishap: {
+      bad_block: {
+        iota: {
+          read: "a place to read iotas from",
+          write: "a place to write iotas to",
+        },
+      },
+    },
+  },
+}

@@ -25,6 +25,7 @@
     }]
   },
   "mixins": [
+    "ioticblocks-common.mixins.json"
   ],
   "depends": {
     "minecraft": "${versions.minecraft}",

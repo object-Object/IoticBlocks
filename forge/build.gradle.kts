@@ -13,7 +13,10 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfig("ioticblocks-forge.mixins.json")
+        mixinConfig(
+            "ioticblocks-common.mixins.json",
+            "ioticblocks-forge.mixins.json",
+        )
     }
 
     runs {
