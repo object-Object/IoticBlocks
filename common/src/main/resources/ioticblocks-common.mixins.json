@@ -7,6 +7,8 @@
   ],
   "mixins": [
     "MixinOpTheCoolerRead",
+    "MixinOpTheCoolerReadable",
+    "MixinOpTheCoolerWritable",
     "MixinOpTheCoolerWrite"
   ],
   "injectors": {

@@ -21,7 +21,7 @@ public abstract class MixinOpTheCoolerRead {
     private static int argc;
 
     @Inject(method = "execute", at = @At("HEAD"), cancellable = true, remap = false)
-    private void redirectReadBlock(
+    private void handleBlock(
         List<? extends Iota> args,
         CastingEnvironment env,
         CallbackInfoReturnable<List<Iota>> cir
