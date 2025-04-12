@@ -16,7 +16,7 @@ fun List<Iota>.getEntityOrBlockPos(idx: Int, argc: Int = 0): Either<Entity, Bloc
     return when (datum) {
         is EntityIota -> Either.left(datum.entity)
         is Vec3Iota -> Either.right(BlockPos.containing(datum.vec3))
-        else -> throw MishapInvalidIota.of(
+        else -> throw MishapInvalidIota.ofType(
             datum,
             if (argc == 0) idx else argc - (idx + 1),
             "entity_or_vector"
