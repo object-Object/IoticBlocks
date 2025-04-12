@@ -1,4 +1,4 @@
-package gay.object.ioticblocks.mixin;
+package gay.object.ioticblocks.mixin.actions;
 
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;

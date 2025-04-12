@@ -1,9 +1,10 @@
-package gay.object.ioticblocks.mixin;
+package gay.object.ioticblocks.mixin.actions;
 
+import at.petrak.hexcasting.api.casting.castables.SpellAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
-import at.petrak.hexcasting.common.casting.actions.rw.OpTheCoolerWritable;
-import gay.object.ioticblocks.casting.actions.mixin.OpWritableBlock;
+import at.petrak.hexcasting.common.casting.actions.rw.OpTheCoolerWrite;
+import gay.object.ioticblocks.casting.actions.mixin.OpWriteBlock;
 import gay.object.ioticblocks.utils.IoticBlocksUtils;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
-@Mixin(OpTheCoolerWritable.class)
-public abstract class MixinOpTheCoolerWritable {
+@Mixin(OpTheCoolerWrite.class)
+public abstract class MixinOpTheCoolerWrite {
     @Final
     @Shadow(remap = false)
     private static int argc;
@@ -24,10 +25,10 @@ public abstract class MixinOpTheCoolerWritable {
     private void handleBlock(
         List<? extends Iota> args,
         CastingEnvironment env,
-        CallbackInfoReturnable<List<Iota>> cir
+        CallbackInfoReturnable<SpellAction.Result> cir
     ) {
         IoticBlocksUtils.getEntityOrBlockPos(args, 0, argc).ifRight(blockPos ->
-            cir.setReturnValue(OpWritableBlock.execute(args, env))
+            cir.setReturnValue(OpWriteBlock.execute(args, env))
         );
     }
 }

@@ -6,10 +6,10 @@
   "client": [
   ],
   "mixins": [
-    "MixinOpTheCoolerRead",
-    "MixinOpTheCoolerReadable",
-    "MixinOpTheCoolerWritable",
-    "MixinOpTheCoolerWrite"
+    "actions.MixinOpTheCoolerRead",
+    "actions.MixinOpTheCoolerReadable",
+    "actions.MixinOpTheCoolerWritable",
+    "actions.MixinOpTheCoolerWrite"
   ],
   "injectors": {
     "defaultRequire": 1
