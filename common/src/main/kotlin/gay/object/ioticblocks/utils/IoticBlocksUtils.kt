@@ -1,4 +1,4 @@
-@file:JvmName("ActionUtils")
+@file:JvmName("IoticBlocksUtils")
 
 package gay.`object`.ioticblocks.utils
 
