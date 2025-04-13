@@ -19,7 +19,8 @@ object OpWritableBlock {
         val datumHolder = IoticBlocksAPI.INSTANCE.findIotaHolder(env.world, target)
             ?: return false.asActionResult
 
-        val success = datumHolder.writeIota(NullIota(), true)
+        // NOTE: OpTheCoolerWritable doesn't use writeable, but it probably should
+        val success = datumHolder.writeable()
 
         return success.asActionResult
     }
