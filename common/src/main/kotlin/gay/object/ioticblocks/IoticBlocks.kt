@@ -2,6 +2,7 @@ package gay.`object`.ioticblocks
 
 import at.petrak.hexcasting.api.HexAPI
 import at.petrak.hexcasting.api.addldata.ADIotaHolder
+import at.petrak.hexcasting.api.casting.iota.BooleanIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.iota.ListIota
@@ -95,6 +96,10 @@ object IoticBlocks {
                     return !block.isEnergized(pos, bs, level)
                 }
             }
+        }
+
+        IoticBlocksAPI.INSTANCE.registerIotaHolderProvider(ResourceLocation("minecraft", "cake")) { _, _ ->
+            ADIotaHolderReadOnly.ofStatic(BooleanIota(false))
         }
     }
 
