@@ -1,0 +1,40 @@
+{
+  name: "ioticblocks.category.patterns.entry.readwrite_blocks",
+  category: "hexcasting:patterns",
+  icon: "minecraft:writable_book",
+  advancement: "hexcasting:root",
+  pages: [
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexcasting:read/entity",
+      anchor: "hexcasting:read/entity",
+      input: "vec",
+      output: "any",
+      text: "ioticblocks.category.patterns.entry.readwrite_blocks.page.read/block",
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexcasting:write/entity",
+      anchor: "hexcasting:write/entity",
+      input: "vec, any",
+      output: "",
+      text: "ioticblocks.category.patterns.entry.readwrite_blocks.page.write/block",
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexcasting:readable/entity",
+      anchor: "hexcasting:readable/entity",
+      input: "vec",
+      output: "bool",
+      text: "ioticblocks.category.patterns.entry.readwrite_blocks.page.readable/block",
+    },
+    {
+      type: "hexcasting:pattern",
+      op_id: "hexcasting:writable/entity",
+      anchor: "hexcasting:writable/entity",
+      input: "vec",
+      output: "bool",
+      text: "ioticblocks.category.patterns.entry.readwrite_blocks.page.writable/block",
+    },
+  ],
+}

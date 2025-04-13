@@ -1,4 +1,23 @@
 {
+  ioticblocks: {
+    category: {
+      patterns: {
+        entry: {
+          readwrite_blocks: {
+            "": "Reading/Writing Blocks",
+            page: {
+              "read/block": "Like $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$, but the iota is read out of a block instead of my other hand.",
+              "write/block": "Like $(l:patterns/readwrite#hexcasting:write)$(action)Scribe's Gambit/$, but the iota is written to a block instead of my other hand.$(br2)\
+                Interestingly enough, it looks like I cannot write my own Name using this spell. I get a sense that I might be endangered if I could.",
+              "readable/block": "Like $(l:patterns/readwrite#hexcasting:readable)$(action)Auditor's Reflection/$, but the readability of a block is checked instead of my other hand.",
+              "writable/block": "Like $(l:patterns/readwrite#hexcasting:writable)$(action)Assessor's Reflection/$, but the writability of a block is checked instead of my other hand.",
+            }
+          }
+        }
+      }
+    }
+  },
+
   hexcasting: {
     mishap: {
       bad_block: {
