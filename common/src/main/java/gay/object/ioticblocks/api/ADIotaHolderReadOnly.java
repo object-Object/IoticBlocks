@@ -22,14 +22,20 @@ public interface ADIotaHolderReadOnly extends ADIotaHolder {
 
     /** Wraps an iota in a read-only iota holder. */
     @NotNull
-    static ADIotaHolder ofStatic(@NotNull Iota iota) {
+    static ADIotaHolder ofStatic(@Nullable Iota iota) {
         return new ADIotaHolderReadOnly() {
             @Override
-            public @Nullable CompoundTag readIotaTag() {
-                return IotaType.serialize(iota);
+            @Nullable
+            public CompoundTag readIotaTag() {
+                if (iota != null) {
+                    return IotaType.serialize(iota);
+                } else {
+                    return null;
+                }
             }
 
             @Override
+            @Nullable
             public Iota readIota(ServerLevel world) {
                 return iota;
             }
