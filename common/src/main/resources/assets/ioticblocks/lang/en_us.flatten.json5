@@ -10,7 +10,7 @@
               "write/block": "Like $(l:patterns/readwrite#hexcasting:write)$(action)Scribe's Gambit/$, but the iota is written to a block instead of my other hand.$(br2)\
                 Interestingly enough, it looks like I cannot write my own Name using this spell. I get a sense that I might be endangered if I could.",
               "read/index": "Read a list iota out of an entity or block, then push the iota at the specified index to the stack.$(br2)\
-                It seems this and the next pattern may be useful for handling very large amounts of data without causing a $(l:casting/mishaps)Too Many Iotas/$ mishap.",
+                It seems this and the next pattern may be useful for handling large amounts of data without causing a $(l:casting/mishaps)Too Many Iotas/$ mishap.",
               "write/index": "Read a list iota out of an entity or block, then set the element at the specified index of that list to the given iota, then write the resulting list back to the entity or block.",
               "readable/block": "Like $(l:patterns/readwrite#hexcasting:readable)$(action)Auditor's Reflection/$, but the readability of a block is checked instead of my other hand.",
               "writable/block": "Like $(l:patterns/readwrite#hexcasting:writable)$(action)Assessor's Reflection/$, but the writability of a block is checked instead of my other hand.",
