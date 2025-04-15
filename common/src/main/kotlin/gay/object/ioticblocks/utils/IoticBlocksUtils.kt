@@ -5,8 +5,7 @@ package gay.`object`.ioticblocks.utils
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
-import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
+import at.petrak.hexcasting.api.casting.mishaps.*
 import com.mojang.datafixers.util.Either
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.Entity
@@ -22,4 +21,11 @@ fun List<Iota>.getEntityOrBlockPos(idx: Int, argc: Int = 0): Either<Entity, Bloc
             "entity_or_vector"
         )
     }
+}
+
+fun mishapBadEntityOrBlock(target: Either<Entity, BlockPos>, stub: String): Mishap {
+    return target.map(
+        { MishapBadEntity.of(it, stub) },
+        { MishapBadBlock.of(it, stub) },
+    )
 }
