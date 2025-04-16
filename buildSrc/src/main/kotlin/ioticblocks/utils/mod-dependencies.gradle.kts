@@ -72,7 +72,7 @@ val modVersion: String by project
 tasks.withType<ProcessResources>().configureEach {
     // allow referencing values from libs.versions.toml in Fabric/Forge mod configs
     val dependencyVersions = mapOf(
-        "modVersion" to modVersion,
+        "version" to version,
         "versions" to extension.getVersions(),
     )
 

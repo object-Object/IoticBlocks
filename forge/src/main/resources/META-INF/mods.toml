@@ -4,7 +4,7 @@ license = "MIT"
 
 [[mods]]
 modId = "ioticblocks"
-version = "${modVersion}"
+version = "${version}"
 displayName = "IoticBlocks"
 logoFile = "assets/ioticblocks/icon.png"
 authors = "object-Object"
