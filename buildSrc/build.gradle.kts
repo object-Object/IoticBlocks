@@ -21,6 +21,7 @@ dependencies {
     implementation(pluginMarker(libs.plugins.shadow))
     implementation(pluginMarker(libs.plugins.modPublish))
     implementation(pluginMarker(libs.plugins.pkJson5))
+    implementation(pluginMarker(libs.plugins.dokka))
 }
 
 java {

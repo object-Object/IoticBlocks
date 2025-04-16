@@ -2,12 +2,17 @@
 
 package ioticblocks
 
+import gradle.kotlin.dsl.accessors._c04d8e8542fbcc88acb8c750bb46ff86.dokka
+import gradle.kotlin.dsl.accessors._c04d8e8542fbcc88acb8c750bb46ff86.dokkaSourceSets
+import gradle.kotlin.dsl.accessors._c04d8e8542fbcc88acb8c750bb46ff86.javaMain
+import gradle.kotlin.dsl.accessors._c04d8e8542fbcc88acb8c750bb46ff86.main
 import libs
 
 plugins {
     java
     kotlin("jvm")
     id("architectury-plugin")
+    id("org.jetbrains.dokka")
 }
 
 val mavenGroup: String by project
@@ -91,5 +96,36 @@ tasks {
 
     processTestResources {
         exclude(".cache")
+    }
+}
+
+val githubRepository = System.getenv("GITHUB_REPOSITORY") ?: "object-Object/IoticBlocks"
+val githubRef = System.getenv("GITHUB_SHA") ?: "main"
+
+dokka {
+    dokkaSourceSets {
+        configureEach {
+            perPackageOption {
+                suppress = true
+            }
+            perPackageOption {
+                matchingRegex = """.*\bapi\b.*"""
+                suppress = false
+            }
+            sourceLink {
+                val projectPath = projectDir.relativeTo(rootProject.projectDir)
+                remoteUrl = uri("https://github.com/$githubRepository/tree/$githubRef/$projectPath")
+                remoteLineSuffix = "#L"
+            }
+        }
+    }
+    pluginsConfiguration {
+        html {
+            templatesDir = rootProject.file("dokka/templates")
+            customStyleSheets = rootProject.fileTree("dokka/styles").matching { include("**/*.css") }
+            customAssets.from(
+                project(":common").file("src/main/resources/assets/ioticblocks/icon.png"),
+            )
+        }
     }
 }

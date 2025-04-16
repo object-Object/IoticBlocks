@@ -1,32 +1,45 @@
 from importlib.resources import Package
-from typing_extensions import override
+from typing import Any
 
+from hexdoc.core import Properties
 from hexdoc.plugin import (
     HookReturn,
     ModPlugin,
     ModPluginImpl,
     ModPluginWithBook,
+    UpdateTemplateArgsImpl,
     hookimpl,
 )
+from hexdoc.utils import cast_or_raise
+from typing_extensions import override
 
 import hexdoc_ioticblocks
 
-from .__gradle_version__ import FULL_VERSION, MINECRAFT_VERSION, MOD_VERSION
+from .__gradle_version__ import FULL_VERSION, MINECRAFT_VERSION, MOD_ID, MOD_VERSION
 from .__version__ import PY_VERSION
 
 
-class IoticBlocksPlugin(ModPluginImpl):
+class IoticBlocksPlugin(ModPluginImpl, UpdateTemplateArgsImpl):
     @staticmethod
     @hookimpl
     def hexdoc_mod_plugin(branch: str) -> ModPlugin:
         return IoticBlocksModPlugin(branch=branch)
+
+    @staticmethod
+    @hookimpl
+    def hexdoc_update_template_args(template_args: dict[str, Any]) -> None:
+        props = cast_or_raise(template_args["props"], Properties)
+        if props.modid == MOD_ID:
+            template_args |= {
+                "ioticblocks_api_docs_url": str(props.env.github_pages_url / "api"),
+            }
 
 
 class IoticBlocksModPlugin(ModPluginWithBook):
     @property
     @override
     def modid(self) -> str:
-        return "ioticblocks"
+        return MOD_ID
 
     @property
     @override
@@ -51,7 +64,7 @@ class IoticBlocksModPlugin(ModPluginWithBook):
         from ._export import generated
 
         return generated
-    
+
     @override
     def jinja_template_root(self) -> tuple[Package, str]:
         return hexdoc_ioticblocks, "_templates"

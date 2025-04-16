@@ -49,6 +49,8 @@ asm = "9.5"
 shadow = "7.1.2"
 modPublish = "0.5.1"
 
+dokka = "2.0.0"
+
 [bundles]
 asm = ["asm", "asm-analysis", "asm-commons", "asm-tree", "asm-util"]
 
@@ -116,3 +118,5 @@ architectury-loom = { id="dev.architectury.loom", version.ref="architectury-loom
 shadow     = { id="com.github.johnrengelman.shadow", version.ref="shadow" }
 modPublish = { id="me.modmuss50.mod-publish-plugin", version.ref="modPublish" }
 pkJson5    = { id="at.petra-k.pkpcpbp.PKJson5Plugin", version.ref="pkpcpbp" }
+
+dokka = { id = "org.jetbrains.dokka", version.ref="dokka" }

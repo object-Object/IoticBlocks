@@ -15,6 +15,12 @@ architectury {
     minecraft = minecraftVersion
 }
 
+dependencies {
+    dokka(project(":common"))
+    dokka(project(":fabric"))
+    dokka(project(":forge"))
+}
+
 tasks {
     register("runAllDatagen") {
         dependsOn(":forge:runCommonDatagen")
