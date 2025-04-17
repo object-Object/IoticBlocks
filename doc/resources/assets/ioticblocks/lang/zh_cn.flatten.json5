@@ -1,0 +1,8 @@
+{
+  hexdoc: {
+    "ioticblocks": {
+      title: "IoticBlocks之书",
+      description: "将咒法凝浆（HexGloop）中的方块读写图案移植到了1.20.1。",
+    },
+  }
+}
