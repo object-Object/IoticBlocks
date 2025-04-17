@@ -48,3 +48,5 @@ Try to avoid using things outside of the `gay.object.ioticblocks.api` package, s
 ## Attribution
 
 * Original implementations: SamsTheNerd ([GitHub](https://github.com/SamsTheNerd), [Modrinth](https://modrinth.com/user/SamsTheNerd)), in [HexGloop](https://github.com/SamsTheNerd/HexGloop) and [FallingColors/HexMod#796](https://github.com/FallingColors/HexMod/pull/796)
+* Translations:
+  * `zh_cn`: ChuijkYahus ([GitHub](https://github.com/ChuijkYahus))
