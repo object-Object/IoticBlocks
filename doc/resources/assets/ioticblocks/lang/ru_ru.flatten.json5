@@ -1,0 +1,8 @@
+{
+  hexdoc: {
+    "ioticblocks": {
+      title: "Блокнот IoticBlocks",
+      description: "Порт функционала HexGloop на руны чтения/записи блоков для 1.20.1.",
+    },
+  }
+}
