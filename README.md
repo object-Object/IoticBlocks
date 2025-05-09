@@ -33,14 +33,14 @@ Full examples:
 
 ```groovy
 // released versions
-modApi("gay.object.ioticblocks:ioticblocks-common:1.0.0+1.20.1")
-modApi("gay.object.ioticblocks:ioticblocks-fabric:1.0.0+1.20.1")
-modApi("gay.object.ioticblocks:ioticblocks-forge:1.0.0+1.20.1")
+modApi("gay.object.ioticblocks:ioticblocks-common:1.0.1+1.20.1")
+modApi("gay.object.ioticblocks:ioticblocks-fabric:1.0.1+1.20.1")
+modApi("gay.object.ioticblocks:ioticblocks-forge:1.0.1+1.20.1")
 
 // bleeding edge builds
-modApi("gay.object.ioticblocks:ioticblocks-common:1.0.0+1.20.1-SNAPSHOT")
-modApi("gay.object.ioticblocks:ioticblocks-fabric:1.0.0+1.20.1-SNAPSHOT")
-modApi("gay.object.ioticblocks:ioticblocks-forge:1.0.0+1.20.1-SNAPSHOT")
+modApi("gay.object.ioticblocks:ioticblocks-common:1.0.1+1.20.1-SNAPSHOT")
+modApi("gay.object.ioticblocks:ioticblocks-fabric:1.0.1+1.20.1-SNAPSHOT")
+modApi("gay.object.ioticblocks:ioticblocks-forge:1.0.1+1.20.1-SNAPSHOT")
 ```
 
 Try to avoid using things outside of the `gay.object.ioticblocks.api` package, since they may change at any time.
