@@ -13,6 +13,7 @@ object OpReadBlock {
     @JvmStatic
     fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val target = args.getBlockPos(0, argc)
+        env.assertPosInRange(target)
 
         val datumHolder = IoticBlocksAPI.INSTANCE.findIotaHolder(env.world, target)
             ?: throw MishapBadBlock.of(target, "iota.read")
