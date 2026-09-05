@@ -1,5 +1,7 @@
 # IoticBlocks
 
+[![Translation status](https://weblate.hexxy.media/widget/ioticblocks/language-badge.svg?threshold=0)](https://weblate.hexxy.media/engage/ioticblocks/)
+[![Translation status](https://weblate.hexxy.media/widget/ioticblocks/svg-badge.svg)](https://weblate.hexxy.media/engage/ioticblocks/)
 [![powered by hexdoc](https://img.shields.io/endpoint?url=https://hexxy.media/api/v0/badge/hexdoc?label=1)](https://ioticblocks.hexxy.media)
 
 [CurseForge](https://curseforge.com/minecraft/mc-mods/ioticblocks) | [Modrinth](https://modrinth.com/mod/ioticblocks)
