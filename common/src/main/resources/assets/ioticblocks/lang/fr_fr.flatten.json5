@@ -1,1 +1,17 @@
-{}
+{
+  ioticblocks: {
+    category: {
+      patterns: {
+        entry: {
+          readwrite_blocks: {
+            "": "Blocs de Lecture/Écriture",
+            page: {
+              "read/block": "Comme $(l:patterns/readwrite#hexcasting:read)$(action)Reflet du Scibe/$, mais l'Iota est lu depuis un bloc plutôt que depuis mon autre main.",
+              "write/block": "Comme le $(l:patterns/readwrite#hexcasting:write)$(action)Gambit du Scribe/$, mais l'Iota est écrit sur un bloc plutôt que sur mon autre main. $(br2)Il est intéressant de noter que je ne peux pas écrire mon Vrai Nom en utilisant ce sort. Je sens que je pourrais me mettre en danger si je le faisais.",
+            },
+          },
+        },
+      },
+    },
+  },
+}
